@@ -1,7 +1,7 @@
 #!/bin/bash
 
 log() {
-  echo -n "`date +"%m/%d/%Y %T"` $1"
+  echo "`date +"%m/%d/%Y %T"` $1"
 }
 
 ahem() {
@@ -61,7 +61,6 @@ do
     # fi
     # sleep 1
   else
-    log "We're up. :)"
     sleep 30
   fi
 done
