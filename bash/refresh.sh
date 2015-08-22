@@ -61,7 +61,7 @@ do
     # fi
     # sleep 1
   else
-    log "We're down. :("
+    log "We're up. :)"
     sleep 30
   fi
 done
