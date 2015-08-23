@@ -5,7 +5,7 @@ log() {
 }
 
 ahem() {
-  afplay Downloads/ahem_x.wav
+  afplay ~/Downloads/ahem_x.wav
 }
 
 restart_wifi() {
@@ -48,18 +48,17 @@ do
   then
     ahem
     log "We're down. :("
-    exit
-    # restart_wifi
-    # login
-    # verify
-    # if [ `echo $?` != 0 ]
-    # then
-    #   echo `date +"%m/%d/%Y %T"`" ...sorry, something went wrong. :("
-    #   exit
-    # else
-    #   echo `date +"%m/%d/%Y %T"`" ...and we're back. :)"
-    # fi
-    # sleep 1
+    restart_wifi
+    login
+    verify
+    if [ `echo $?` != 0 ]
+    then
+      echo `date +"%m/%d/%Y %T"`" ...sorry, something went wrong. :("
+      exit
+    else
+      echo `date +"%m/%d/%Y %T"`" ...and we're back. :)"
+    fi
+    sleep 1
   else
     sleep 30
   fi
